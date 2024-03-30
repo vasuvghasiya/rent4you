@@ -109,9 +109,7 @@ app.post("/location", async (req, res) => {
         res.render("show.ejs", { results, loct });
     } else {
         res.send(`No data found for ${location} ,${pdate}and${rdate}`);
-        res.send('No data found for the provided location and date.');
-
-    }
+       }
 });
 app.post("/login", async (req, res) => {
     let { username, password } = req.body
