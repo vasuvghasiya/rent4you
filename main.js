@@ -90,7 +90,6 @@ app.get("/signup", async (req, res) => {
 })
 app.get("/profile", async (req, res) => {
     let user = req.session.user
-
     let username = user.username
     let password = user.password
     let l1 = await logi.findOne({ username, password });
