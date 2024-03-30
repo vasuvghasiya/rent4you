@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent 4 you</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="wbimage/logo.jpg" alt="logo">
+            <!-- <h1>Rent 4 you</h1> -->
+        </div>
+        <div class="item">
+            <% if (user) { %>
+                <a class="welcome">Welcome, <%= user.username %>!</a>
+            <% } else { %>
+                <a class="welco" href="/login">Login</a>
+            <% } %>
+            
+        </div>
+        <div class="custom_menu-btn">
+            <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+            </button>
+        </div>
+        <div id="myNav" class="overlay">
+            <div class="overlay-content">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/cars">Cars</a>
+                <a href="/contact">Contact Us</a>
+                <% if (!user) { %>
+                    <a href="/login">Login</a>
+                <% }
+                else { %>
+                    <a href="/profile">profile</a>
+                    <a href="/logout">logout</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="home">
+        <div class="main-sec">
+            <div class="left">
+                <p class="txt1">Easy And Fast Way To <span style="color: #0043ff8c;">Rent</span> Your Car</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore accusamus nobis similique ab
+                    praesentium itaque dolore quidem debitis distinctio laborum!</p>
+                <div class="btn">
+                    <input class="car" type="button" value="Rent Car">
+                </div>
+            </div>
+
+            <div class="right">
+                <img src="wbimage/bmw-22428.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <section class="loc-sec">
+        <div class="main-sec">
+            <form action="/location" method="post">
+                <div class="pick">
+                    <label for="location">Pick Up Location</label>
+                    <i class="fa-solid fa-location-dot">
+                        <input type="text" name="location" placeholder="Enter location">
+                    </i>
+                </div>
+
+                <div class="pick">
+                    <label for="location">Pick Up Date</label>
+                    <i class="fa-solid fa-calendar-days">
+                        <input type="date" name="pdate" id="">
+                    </i>
+                </div>
+
+                <div class="pick">
+                    <label for="location">Return Date</label>
+                    <i class="fa-solid fa-calendar-days">
+                        <input type="date" name="rdate" id="">
+                    </i>
+                </div>
+
+                <div class="pick">
+                    <p>
+                        <button>submit</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="car-sec">
+        <div class="txt">
+            <p class="txt1">Latest <span>Inventory</span></p>
+            <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ipsa!</p>
+        </div>
+
+        <div class="main-sec">
+            <% for (let i=0; i < 6 && i < cars.length; i++) { %>
+               
+                <div class="box">
+                    <img class="iii" src="<%= cars[i].img %>" alt="">
+                    <div class="details">
+                        <p class="car-name">
+                            <%= cars[i].name %>
+                        </p>
+                        <div class="review">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                            <p>( <%= cars[i].reviews %> Reviews )</p>
+                            <p><i class="fa-solid fa-location-dot"></i>
+                                <%= cars[i].location %>
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <p><i class="fa-solid fa-chair"></i>
+                                <%= cars[i].seat %> Seat
+                            </p>
+                            <p><i class="fa-solid fa-gas-pump"></i>
+                                <%= cars[i].milage %>
+                            </p>
+
+                            <p><i class="fa-solid fa-car-battery"></i>
+                                <%= cars[i].battery %>
+                            </p>
+                            <p><i class="fa-solid fa-car-side"></i>
+                                <%= cars[i].ac %>
+                            </p>
+
+
+                        </div>
+
+                        <div class="price">
+                            <p>₹<%= cars[i].price %> / Day</p>
+                            <button name="book"><a href="/<%= cars[i]._id %>">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </section>
+
+    <section class="support-sec">
+        <div class="txt">
+            <p class="txt1">Why <span>Choose</span> Us</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, cupiditate!</p>
+        </div>
+
+        <div class="main-sec">
+            <div class="box">
+                <i class="fa-solid fa-phone"></i>
+                <div class="txt-sec">
+                    <p class="txt1">24 Hour Support</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque sequi animi ab
+                        corporis, necessitatibus eum cum vel rerum nisi.</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-flag-checkered"></i>
+                <div class="txt-sec">
+                    <p class="txt1">Best Price</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque sequi animi ab
+                        corporis, necessitatibus eum cum vel rerum nisi.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-certificate"></i>
+                <div class="txt-sec">
+                    <p class="txt1">Verified License</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque sequi animi ab
+                        corporis, necessitatibus eum cum vel rerum nisi.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <div class="txt-sec">
+                    <p class="txt1">Free Cancelation</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque sequi animi ab
+                        corporis, necessitatibus eum cum vel rerum nisi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achie-sec">
+        <div class="txt">
+            <p class="txt1">Our <span>Achievement</span></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, provident.</p>
+        </div>
+
+        <div class="main-sec">
+            <div class="box">
+                <p class="txt1">40+</p>
+                <p>Active Member</p>
+            </div>
+
+            <div class="box">
+                <p class="txt1">30+</p>
+                <p>Car Color</p>
+            </div>
+
+            <div class="box">
+                <p class="txt1">60+</p>
+                <p>Car Model</p>
+            </div>
+
+            <div class="box">
+                <p class="txt1">10k</p>
+                <p>Positive Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="start-sec">
+        <div class="main-sec">
+            <div class="left">
+                <p class="txt1">Ready To Get Start?</p>
+                <p class="txt2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ipsa eos neque
+                    quo consectetur totam perferendis aut quos sequi expedita.</p>
+                <div class="btn">
+                    <button><a style="text-decoration: none;" href="/contact">Contact Us</a></button>
+                </div>
+            </div>
+            <div class="right">
+                <img src="wbimage/verna.png" alt="">
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

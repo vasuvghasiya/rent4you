@@ -1,0 +1,22 @@
+{
+  "name": "car-rental-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "express-cookie": "^4.17.1",
+    "express-session": "^1.18.0",
+    "flash": "^1.1.0",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.1",
+    "nodemailer": "^6.9.12"
+  }
+}
