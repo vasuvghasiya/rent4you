@@ -90,11 +90,7 @@ app.get("/signup", async (req, res) => {
 })
 app.get("/profile", async (req, res) => {
     let user = req.session.user
-<<<<<<< HEAD
-=======
-
->>>>>>> 8757ac8920fc31c47e1a5a78a7cc6b4eb3846d3b
-    let username = user.username
+let username = user.username
     let password = user.password
     let l1 = await logi.findOne({ username, password });
     let carIds = l1.carid
@@ -112,11 +108,9 @@ app.post("/location", async (req, res) => {
     if (results.length > 0) {
         res.render("show.ejs", { results, loct });
     } else {
-<<<<<<< HEAD
         res.send(`No data found for ${location} ,${pdate}and${rdate}`);
-=======
         res.send('No data found for the provided location and date.');
->>>>>>> 8757ac8920fc31c47e1a5a78a7cc6b4eb3846d3b
+
     }
 });
 app.post("/login", async (req, res) => {
@@ -245,10 +239,6 @@ app.post("/:id", async (req, res) => {
     await l1.save();
     res.render("payment", { car, l1 });
 })
-<<<<<<< HEAD
-=======
-
->>>>>>> 8757ac8920fc31c47e1a5a78a7cc6b4eb3846d3b
 app.listen(3000, () => {
     console.log("server was start")
 })
