@@ -13,7 +13,11 @@
         .car-sec .main-sec {
             column-gap: 1cm;
         }
-
+.check{
+    /* display: flex; */
+    /* justify-content: center; */
+padding: 0 10% 0 10% ;
+}
         .car-sec .read {
             margin: 205px;
             margin-bottom: 0px;
@@ -122,6 +126,10 @@
                 display: inline;
             }
         }
+
+        .checkbox{
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -182,39 +190,44 @@
                     <div class="fi">
                     <div class="pick">
                         <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Full Name" >
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
                     </div>
                     <div class="pick">
                         <label for="email">Your Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Email Address" >
+                        <input type="email" id="email" name="email" placeholder="Email Address" required >
                     </div>
                     <div class="pick">
                         <label for="Phone">Your Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone number" >
+                        <input type="tel" id="phone" name="phone" placeholder="Phone number" required >
                     </div>
                     <div class="pick">
                         <label for="Age">Your Birth date:</label>
-                        <input type="date" id="bdate" name="bdate"  >
+                        <input type="date" id="bdate" name="bdate" required >
                     </div>
                     </div>
                     <div class="se">
                     <div class="pick">
                         <label for="pan">Your Pan Number:</label>
-                        <input type="text" id="pan" name="pan" placeholder="XZYEZ039V" >
+                        <input type="text" id="pan" name="pan" placeholder="XZYEZ039V" required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}">
                     </div>
                     <div class="pick">
                         <label for="adhar">Your Adhar Number:</label>
-                        <input type="text" id="adhar" name="adhar" pattern="[0-9]{12}" placeholder="Enter 12 digits Number" >
+                        <input type="text" id="adhar" name="adhar" required pattern="[0-9]{12}" placeholder="Enter 12 digits Number" >
                     </div>
                     <div class="pick">
                         <label for="Address">Your Address:</label>
-                        <input type="text" id="Address" name="Address" placeholder="Address" >
+                        <input type="text" id="Address" name="Address" placeholder="Address" required >
                     </div>
                     <div class="pick">
                         <label for="message">Additional Message:</label>
                         <input id="message" name="message" placeholder="suggestions">
                     </div>
                     </div>
+                </div>
+                <div class="check">
+                    <label class="checkbox">
+                        <input type="checkbox" required> I Acknowledge and accept the terms and conditions
+                    </label>
                 </div>
                     <div class="pick">
                         <p><button>₹<span id="totalPrice"></span> Pay Now</button></p>
@@ -227,41 +240,49 @@
 
             <div class="fs">
                 <h1>Read before you book!</h1>
-                <h3>Local Travel</h3>
-                <p class="">Cab should only be taken to places within the serviceable city. Else driver has the right to
-                    deny.</p>
-                <h3>Cab Category</h3>
-                <p>The booking will be for cab type HATCHBACK and we do not commit on providing the preferred cab model
-                    (Indica, Swift or similar)</p>
-                <h3>Luggage Policy</h3>
-                <p>HATCHBACK has space for 1 Luggage Bag. In case the car happens to be CNG, the luggage space will be
-                    lesser. However depending on the number of passengers, luggage can be adjusted in seating area with
-                    driver consent.</p>
-                <h3>Driver Details</h3>
-                <p>Driver details will be shared up to 30 mins prior to departure. Incase the driver/cab that reaches
-                    you for pick up is different from what we have communicated, please don't board the cab and call us
-                    for assistance.</p>
+
+                <h3>Booking and Rental Period</h3>
+                <p class="">The rental period begins and ends as per the agreed-upon dates and times. Any extension must be communicated and approved in advance.</p>
+
+                <h3>Driver Requirements:</h3>
+                <p>All drivers must possess a valid driver's license and meet the minimum age requirement set forth by local laws. Additional drivers must be declared and approved prior to rental.</p>
+
+                <h3>Vehicle Use:</h3>
+                <p>he rented vehicle is to be used only for lawful purposes and within the terms of the rental agreement. It should not be driven off-road, used for racing, towing, or transporting hazardous materials.</p>
+
+                <h3>Insurance and Liability:</h3>
+                <p>Renters are responsible for any damages incurred during the rental period, excluding normal wear and tear. Optional insurance coverage may be available, and renters are encouraged to review their insurance options before renting.</p>
+
+                <h3>Return of Vehicle:</h3>
+                <p>he vehicle must be returned in the same condition as rented, with a full tank of fuel, to the designated location at the agreed-upon time. Late returns may incur additional fees.</p>
+
             </div>
+            
             <div class="sd">
-                <h3>Trip Duration</h3>
-                <p>Post the package inclusions, extra Km and extra hour charges will apply as mentioned. Parking
-                    charges, if applicable, should be paid to the driver directly.</p>
-                <h3>Trip Time</h3>
-                <p>Trip Time will be counted from the pickup time</p>
-                <h3>Delays</h3>
-                <p>Due to traffic or any other unavoidable reason, pickup may be delayed by 30 mins.</p>
-                <h3>Charged KM</h3>
-                <p>The kilometers will be charged starting from pickup location and ending at your final drop location
-                </p>
-                <h3>Receipts</h3>
-                <p>You need to collect receipts from the driver for any extra charges paid directly to the driver during
-                    the trip. MMT is not liable to provide invoices for such amounts.</p>
+                <h3>Vehicle Registration</h3>
+                <p>All vehicles in our inventory are registered and compliant with local laws and regulations.</p>
+
+                <h3>Document Verification</h3>
+                <p>Prior to rental, all necessary documents such as vehicle registration, insurance, and permits are thoroughly verified to ensure legality and compliance.</p>
+
+                <h3>Vehicle Ownership</h3>
+                <p>All vehicles in our inventory are company-owned, ensuring legitimacy and reliability.</p>
+
+                <h3>Regular Inspection</h3>
+                <p>TOur vehicles undergo regular inspections by certified mechanics to ensure they meet safety standards and are in optimal condition for rental.
+                </p><br><br>
+                <p>"If any issues arise due to faults on our end, we take full responsibility and will promptly address and rectify them to ensure your complete satisfaction and peace of mind."</p>
             </div>
+            <!-- <div>
+                <p class="checkbox"><input type="checkbox" required> I acknowledge and accept the terms and conditions outlined above.</p>
+            </div> -->
+            
         </section>
+        
     </section>
     <script>
         var totalPrice =  <%=car.price%> * <%=car.day%>;
-        document.getElementById("totalPrice").textContent = totalPrice;
+        document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
      </script>   
 </body>
 
